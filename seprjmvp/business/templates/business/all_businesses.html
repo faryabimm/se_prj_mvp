@@ -1,0 +1,19 @@
+{% extends 'posts/layout.html' %}
+
+
+{% block content %}
+    <h3> Businesses Employees</h3>
+
+    <ul>
+    {% for business in businesses %}
+        <li>
+        <a href="#">
+            {{ business.user.username }}
+        </a>
+        </li>
+    {% endfor %}
+
+    </ul>
+
+
+{% endblock %}

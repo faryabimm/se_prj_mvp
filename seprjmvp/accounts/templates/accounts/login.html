@@ -1,0 +1,36 @@
+{% extends 'posts/layout.html' %}
+
+
+{% block content %}
+    <div class="col s12 m4 offset-m4">
+        <div class="card">
+            <div class="card-action red lighten-1">
+                <h3>Login</h3>
+            </div>
+
+{#            <div class="card-content">#}
+{#                <div class="form-filed">#}
+{#                    <label for="username">Username</label>#}
+{#                    <input id="username" type="text">#}
+{#                </div>#}
+{#                <div class="form-field">#}
+{#                    <label for="password">Password</label>#}
+{#                    <input id="password" type="password">#}
+{#                </div>#}
+{#                <div class="form-field">#}
+{#                    <button class="btn waves-effect">Login</button>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+        <div class="card-content">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn waves-effect" type="submit">
+                    Login
+                </button>
+            </form>
+        </div>
+
+    </div>
+{% endblock %}

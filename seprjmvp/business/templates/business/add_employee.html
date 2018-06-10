@@ -1,0 +1,11 @@
+{% extends 'posts/layout.html' %}
+
+
+{% block content %}
+    <form method="post">
+    <h3>Assign Employee to Order</h3>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" name="submit">Add</button>
+    </form>
+{% endblock %}

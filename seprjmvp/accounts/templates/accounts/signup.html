@@ -1,0 +1,29 @@
+{% extends 'posts/layout.html' %}
+
+{% block content %}
+    <div class="col s12 m4 offset-m4">
+        <div class="card">
+            <div class="card-action red lighten-1">
+                <h3>Sign Up</h3>
+            </div>
+            <div class="card-content">
+                <form method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <p>
+                            {{ field.label_tag }}<br>
+                            {{ field }}
+                            {% if field.help_text %}
+                                <small style="color: grey">{{ field.help_text }}</small>
+                            {% endif %}
+                            {% for error in field.errors %}
+                                <p style="color: red">{{ error }}</p>
+                            {% endfor %}
+                        </p>
+                    {% endfor %}
+                    <button class="btn wave-effect" type="submit">Sign up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
